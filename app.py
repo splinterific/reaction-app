@@ -8,7 +8,7 @@ slack_events_adapter = SlackEventAdapter(SLACK_VERIFICATION_TOKEN, "/slack/event
 SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 CLIENT = SlackClient(SLACK_BOT_TOKEN)
 
-port = int(os.environ.get("PORT"))
+# port = int(os.environ.get("PORT"))
 print (port)
 
 
@@ -44,4 +44,6 @@ def member_joined_channel(event_data):
     else:
         return
 
-slack_events_adapter.start(port=port)
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 3000))
+    slack_events_adapter.start(port=port)
