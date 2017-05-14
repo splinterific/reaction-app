@@ -40,4 +40,4 @@ def member_joined_channel(event_data):
     else:
         return
 
-slack_events_adapter.start(port=3000)
+slack_events_adapter.start()
