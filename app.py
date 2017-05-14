@@ -8,6 +8,9 @@ slack_events_adapter = SlackEventAdapter(SLACK_VERIFICATION_TOKEN, "/slack/event
 SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 CLIENT = SlackClient(SLACK_BOT_TOKEN)
 
+port = int(os.environ.get("PORT", 5000))
+
+
 
 # Checks for Negative emoji's coming into the welcome channel and pops a headsup
 # into the admin room
@@ -40,4 +43,4 @@ def member_joined_channel(event_data):
     else:
         return
 
-slack_events_adapter.start()
+slack_events_adapter.start(port=port)
