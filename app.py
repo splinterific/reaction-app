@@ -8,7 +8,7 @@ slack_events_adapter = SlackEventAdapter(SLACK_VERIFICATION_TOKEN, "/slack/event
 SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 CLIENT = SlackClient(SLACK_BOT_TOKEN)
 
-port = int(os.environ.get("PORT"))
+port = int(os.environ.get["PORT"])
 
 
 
